@@ -1,7 +1,9 @@
 ﻿using MVCExercise.Models;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 
 namespace MVCExercise.Services
@@ -33,10 +35,17 @@ namespace MVCExercise.Services
             {
                 using (var response = httpClient.GetAsync(url).Result)
                 {
-                    string apiResponse = response.Content.ReadAsStringAsync().Result;
-                    var jsonRootObject = JsonConvert.DeserializeObject<RootObject>(apiResponse);
-                    colorList = jsonRootObject.Data.ToList();
-                    return colorList;
+                    try
+                    {
+                        string apiResponse = response.Content.ReadAsStringAsync().Result;
+                        var jsonRootObject = JsonConvert.DeserializeObject<RootObject>(apiResponse);
+                        colorList = jsonRootObject.Data.ToList();
+                        return colorList;
+                    }
+                    catch (Exception ex)
+                    {                
+                        throw;
+                    }                 
                 }
             }         
         }
