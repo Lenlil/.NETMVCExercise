@@ -1,10 +1,8 @@
 ﻿using MVCExercise.Models;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace MVCExercise.Services
 {
@@ -31,15 +29,6 @@ namespace MVCExercise.Services
         {
             List<Color> colorList = new List<Color>();
 
-            //using (var httpClient = new HttpClient())
-            //{
-            //    using (var response = httpClient.GetAsync(url).Result)
-            //    {
-            //        var data = response.Content.ReadAsStringAsync().Result;
-            //        return JsonConvert.DeserializeObject(data, type);
-            //    }
-            //}
-            
             using (var httpClient = new HttpClient())
             {
                 using (var response = httpClient.GetAsync(url).Result)
