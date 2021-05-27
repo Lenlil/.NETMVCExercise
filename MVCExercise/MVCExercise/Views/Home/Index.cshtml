@@ -1,5 +1,102 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model MVCExercise.ViewModels.DisplayColorsListViewModel
+
+<div class="main-wrapper">
+    <section class="service-area pt-100" id="feature">
+        <div class="container">
+            <h3>Colors</h3>
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Group 1</th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Year</th>
+                            <th scope="col">ColorHex</th>
+                            <th scope="col">PantoneValue</th>
+                            <th scope="col">GroupNo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var color in Model.Group1ColorList)
+                        {
+                            <tr>
+                                <th>@color.Id</th>
+                                <td>@color.Name</td>
+                                <td>@color.Year</td>
+                                <td>@color.ColorHex</td>
+                                <td>@color.PantoneValue</td>
+                                <td>@color.GroupNo</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Group 2</th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Year</th>
+                            <th scope="col">ColorHex</th>
+                            <th scope="col">PantoneValue</th>
+                            <th scope="col">GroupNo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var color in Model.Group2ColorList)
+                        {
+                            <tr>
+                                <th>@color.Id</th>
+                                <td>@color.Name</td>
+                                <td>@color.Year</td>
+                                <td>@color.ColorHex</td>
+                                <td>@color.PantoneValue</td>
+                                <td>@color.GroupNo</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Group 3</th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Year</th>
+                            <th scope="col">ColorHex</th>
+                            <th scope="col">PantoneValue</th>
+                            <th scope="col">GroupNo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var color in Model.Group3ColorList)
+                        {
+                            <tr>
+                                <th>@color.Id</th>
+                                <td>@color.Name</td>
+                                <td>@color.Year</td>
+                                <td>@color.ColorHex</td>
+                                <td>@color.PantoneValue</td>
+                                <td>@color.GroupNo</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>           
+        </div>
+    </section>
+</div>
+

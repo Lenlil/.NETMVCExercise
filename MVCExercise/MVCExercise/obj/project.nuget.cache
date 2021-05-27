@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TfEzSZjFCKOomNJo2kFAtEvzOJzDA7p0giLrDNL6xZCxstRturfV0ed2C5fUQNGQQZJdWojWT6aMbB0PezYSdQ==",
+  "dgSpecHash": "7Nxuz+cqxN9CV2dr0admEpxTMpNnzCuPZs+4eX1PUPMjynkAt1oSbh0LREzc2gSl13WiFOJ7FYFPzXA66x2PIA==",
   "success": true,
   "projectFilePath": "C:\\Programmering\\Projekt\\NETMVCExercise\\MVCExercise\\MVCExercise\\MVCExercise.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
