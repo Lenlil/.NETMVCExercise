@@ -16,8 +16,7 @@ namespace MVCExercise.Controllers
         public IActionResult Index()
         {
             var model = new DisplayColorsListViewModel();
-
-            model.ColorList = _colorService.PopulateColorList();         
+            model = _colorService.PopulateColorListViewModels();         
 
             return View(model);
         }

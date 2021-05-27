@@ -10,19 +10,25 @@ namespace MVCExercise.Services
     {         
         private readonly string _apiURL = "https://reqres.in/api/example?per_page=2&page=";
 
-        public List<ColorViewModel> PopulateColorList()
+        public DisplayColorsListViewModel PopulateColorListViewModels()
         {
             var allColorsUnsorted = GetAllColors();
             var sortedColorsViewModels = SortColorsIntoGroups(allColorsUnsorted);
-            var orderedColorsViewModelsList = sortedColorsViewModels.OrderBy(o => o.Year).ToList();
 
-            return orderedColorsViewModelsList;
+            var model = new DisplayColorsListViewModel()
+            {
+                Group1ColorList = sortedColorsViewModels.Where(x => x.GroupNo == 1).OrderBy(o => o.Year).ToList(),
+                Group2ColorList = sortedColorsViewModels.Where(x => x.GroupNo == 2).OrderBy(o => o.Year).ToList(),
+                Group3ColorList = sortedColorsViewModels.Where(x => x.GroupNo == 3).OrderBy(o => o.Year).ToList(),
+            };           
+
+            return model;
         }
         public List<Color> GetAllColors()
         {
             var allColors = new List<Color>();
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 1; i < 7; i++)
             {
                 var colorListFromApi = GetColorsOnPage(i);
                 allColors.AddRange(colorListFromApi);
@@ -33,8 +39,7 @@ namespace MVCExercise.Services
         public List<Color> GetColorsOnPage(int pageNo)
         {
             var result = ApiHelper.Instance
-                .MakeApiCallSync($"{_apiURL}{pageNo}", new List<Color>()
-                    .GetType());
+                .MakeApiCallSync($"{_apiURL}{pageNo}");
             return result;
         }
 

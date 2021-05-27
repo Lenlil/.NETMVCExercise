@@ -27,7 +27,7 @@ namespace MVCExercise.Services
             }
         } 
 
-        public dynamic MakeApiCallSync(string url, Type type)
+        public dynamic MakeApiCallSync(string url)
         {
             List<Color> colorList = new List<Color>();
 
