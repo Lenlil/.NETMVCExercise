@@ -1,5 +1,37 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model MVCExercise.ViewModels.DisplayColorsListViewModel
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js"></script>
+
+<div class="main-wrapper">
+    <section class="service-area pt-100" id="feature">
+        <div class="container">
+            <h3>Colors</h3>
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Year</th>
+                            <th scope="col">ColorHex</th>
+                            <th scope="col">PantoneValue</th>
+                            <th scope="col">GroupNo</th>                            
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: colorList">
+                        <tr>
+                            <th scope="row" data-bind="text: id"></th>
+                            <td data-bind="text: name"></td>
+                            <td data-bind="text: year"></td>
+                            <td data-bind="text: colorhex"></td>
+                            <td data-bind="text: pantonevalue"></td>
+                            <td data-bind="text: groupno"></td>                          
+                        </tr>
+                    </tbody>
+                </table>
+            </div>           
+        </div>
+    </section>
+</div>
+
